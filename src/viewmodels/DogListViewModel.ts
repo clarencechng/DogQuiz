@@ -8,11 +8,12 @@ export type DogListViewModel = {
   loading: boolean;
 }
 
-export function useDogListViewModel(): DogListViewModel {
+export function useDogListViewModel() {
   const [dogList, setDogList] = useState<DogListItem[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let mounted = true;
     const fetchBreeds = async () => {
       const repo = new DogRepository();
       const breeds = await repo.fetchBreeds();
@@ -24,10 +25,13 @@ export function useDogListViewModel(): DogListViewModel {
           list.push({ breed: breedObj.breed });
         }
       });
-      setDogList(list);
-      setLoading(false);
+      if (mounted) {
+        setDogList(list);
+        setLoading(false);
+      }
     };
     fetchBreeds();
+    return () => { mounted = false; };
   }, []);
 
   return { dogList, loading };

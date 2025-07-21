@@ -6,15 +6,19 @@ export function useDogDetailsViewModel(breed?: string, subBreed?: string) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let mounted = true;
     if (!breed) return;
     const fetchImage = async () => {
       setLoading(true);
       const repo = new DogRepository();
       const image = await repo.fetchDogImageURL(breed, subBreed || undefined);
-      setImageUrl(image.url);
-      setLoading(false);
+      if (mounted) {
+        setImageUrl(image.url);
+        setLoading(false);
+      }
     };
     fetchImage();
+    return () => { mounted = false; };
   }, [breed, subBreed]);
 
   return { imageUrl, loading };

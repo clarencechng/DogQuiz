@@ -14,9 +14,11 @@ export default function DogDetailsScreen() {
       <Stack.Screen
         options={{
           title: 'Dog Details',
+          headerStyle: { backgroundColor: '#fff' },
+          headerTitleStyle: { color: '#222' },
           headerLeft: () => (
             <Pressable onPress={() => router.back()} style={{ paddingLeft: 8, paddingRight: 8 }}>
-              <Ionicons name="chevron-back" size={28} color="white" />
+              <Ionicons name="chevron-back" size={28} color="#222" />
             </Pressable>
           ),
         }}

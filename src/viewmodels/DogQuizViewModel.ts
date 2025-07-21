@@ -11,18 +11,9 @@ export type Question = {
 };
 
 export type DogQuizViewModel = {
-  selectedIndex: number | null;
-  selectOption: (idx: number) => void;
-  isAnswered: boolean;
-  isCorrect: boolean;
-  reset: () => void;
-  breeds: DogBreed[];
   breedsLoading: boolean;
   questions: Question[];
   regenerateQuestions: () => Promise<void>;
-  currentQuestionIndex: number;
-  setCurrentQuestionIndex: (idx: number) => void;
-  currentQuestion: Question | undefined;
 };
 
 export function useDogQuizViewModel(): DogQuizViewModel {
@@ -106,30 +97,9 @@ export function useDogQuizViewModel(): DogQuizViewModel {
     return () => { mounted = false; };
   }, []);
 
-  const selectOption = (idx: number) => {
-    if (selectedIndex === null) {
-      setSelectedIndex(idx);
-    }
-  };
-
-  const isAnswered = selectedIndex !== null;
-  const currentQuestion = questions[currentQuestionIndex];
-  const isCorrect = isAnswered && currentQuestion && selectedIndex === currentQuestion.correctAnswerIndex;
-
-  const reset = () => setSelectedIndex(null);
-
   return {
-    selectedIndex,
-    selectOption,
-    isAnswered,
-    isCorrect,
-    reset,
-    breeds,
     breedsLoading,
     questions,
     regenerateQuestions,
-    currentQuestionIndex,
-    setCurrentQuestionIndex,
-    currentQuestion,
   };
 } 

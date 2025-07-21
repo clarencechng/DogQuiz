@@ -29,15 +29,28 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          href: null,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="dogquiz"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Dog Quiz',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="pawprint.fill" color={color} />, // Use a dog-related icon
+        }}
+      />
+      <Tabs.Screen
+        name="doglist"
+        options={{
+          title: 'Dog List',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="pawprint.circle.fill" color={color} />, // Info icon for About
+        }}
+      />
+      <Tabs.Screen
+        name="about"
+        options={{
+          title: 'About',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="info.circle" color={color} />, // Info icon for About
         }}
       />
     </Tabs>

@@ -19,9 +19,6 @@ export type DogQuizViewModel = {
 export function useDogQuizViewModel(): DogQuizViewModel {
   const dogRepository = new DogRepository();
 
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
   const [breeds, setBreeds] = useState<DogBreed[]>([]);
   const [breedsLoading, setBreedsLoading] = useState<boolean>(true);
   const [questions, setQuestions] = useState<Question[]>([]);

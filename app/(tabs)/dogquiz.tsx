@@ -214,15 +214,6 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     paddingRight: 4,
   },
-  headerProgress: {
-    fontSize: 16,
-    color: '#888',
-    marginRight: 8,
-  },
-  headerIcon: {
-    fontSize: 20,
-    marginHorizontal: 2,
-  },
   dogImage: {
     width: '90%',
     aspectRatio: 1,
@@ -279,24 +270,6 @@ const styles = StyleSheet.create({
   answerWrong: {
     backgroundColor: '#f87171',
     color: '#fff',
-  },
-  nextButton: {
-    backgroundColor: 'linear-gradient(90deg, #4f8cff 0%, #a084ee 100%)',
-    borderRadius: 16,
-    marginHorizontal: 16,
-    paddingVertical: 18,
-    alignItems: 'center',
-    marginBottom: 24,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 6,
-    elevation: 2,
-  },
-  nextButtonText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#4f8cff',
   },
   modalOverlay: {
     flex: 1,
@@ -396,25 +369,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     alignItems: 'center',
     pointerEvents: 'box-none',
-  },
-  nextButtonFixed: {
-    backgroundColor: '#a084ee',
-    borderRadius: 16,
-    paddingVertical: 18,
-    paddingHorizontal: 48,
-    alignItems: 'center',
-    justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.12,
-    shadowRadius: 8,
-    elevation: 3,
-    minWidth: 240,
-  },
-  nextButtonFixedText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#fff',
   },
   nextButtonDisabled: {
     backgroundColor: '#d1c4e9',
